@@ -167,15 +167,15 @@ const photos: Photo[] = [
 const merchItems = [
   {
     image: "/img/img-1.png",
-    link: "https://reycamiseta.com/categoria-producto/allison/",
+    link: "https://19cc6e-1c.myshopify.com/products/t-shirt-logo",
   },
   {
     image: "/img/img-2.png",
-    link: "https://reycamiseta.com/categoria-producto/allison/",
+    link: "https://19cc6e-1c.myshopify.com/products/t-shirt-foto",
   },
   {
     image: "/img/img-3.png",
-    link: "https://reycamiseta.com/categoria-producto/allison/",
+    link: "https://19cc6e-1c.myshopify.com/products/gorras",
   },
 ];
 
