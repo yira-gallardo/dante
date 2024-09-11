@@ -156,26 +156,21 @@ const photos: Photo[] = [
 //     city: "Mexicali",
 //     link: "https://janto4.mx/gpproducer/public/janto/main.php?Nivel=Evento&idEvento=CACHANILLAMEXI&fbclid=IwY2xjawD76opleHRuA2FlbQIxMAABHfZ6jaQXDZvqqMVj8ysoDJYLrO_hI9FOpvXZGqg6RW8URJzrFcAriTmw8w_aem_R2LO7W0iPXC3-YQvNRXIJg",
 //   },
-//   {
-//     date: "Nov. 30",
-//     venue: "Tattoo Music Fest Mx 2024 ",
-//     city: "Guadalajara",
-//     link: "https://eventos.ticketnowmexico.com/ordertickets.asp?p=1748",
-//   },
+//
 // ];
 
 const merchItems = [
   {
     image: "/img/img-1.png",
-    link: "https://reycamiseta.com/categoria-producto/allison/",
+    link: "https://19cc6e-1c.myshopify.com/products/t-shirt-logo",
   },
   {
     image: "/img/img-2.png",
-    link: "https://reycamiseta.com/categoria-producto/allison/",
+    link: "https://19cc6e-1c.myshopify.com/products/t-shirt-foto",
   },
   {
     image: "/img/img-3.png",
-    link: "https://reycamiseta.com/categoria-producto/allison/",
+    link: "https://19cc6e-1c.myshopify.com/products/gorras",
   },
 ];
 
