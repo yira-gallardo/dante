@@ -99,6 +99,14 @@ const photos: Photo[] = [
     src: "/img/gallery-5.jpg",
     alt: "Photo 6",
   },
+  {
+    src: "/img/gallery-6.jpg",
+    alt: "Photo 8",
+  },
+  {
+    src: "/img/gallery-8.jpg",
+    alt: "Photo 6",
+  },
 ];
 
 // const tourDates = [
@@ -267,25 +275,25 @@ export default function Home() {
           </button>
         </div>
         <div
-          className={`absolute top-16 left-4 z-30 bg-white border border-black text-black${
+          className={`absolute top-16 left-4 z-30 bg-white border border-black text-white${
             isMobileMenuOpen ? "block" : "hidden"
           } md:hidden`}
         >
           <button
             onClick={() => scrollTo("tour")}
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
           >
             TOUR
           </button>
           <button
             onClick={() => scrollTo("musica")}
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
           >
             MÚSICA
           </button>
           <button
             onClick={() => scrollTo("merch")}
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
           >
             MERCH
           </button>
@@ -293,13 +301,13 @@ export default function Home() {
             href="https://www.youtube.com/channel/UCFCFBfGHOv8wItbjwQPktyA"
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
           >
             VIDEOS
           </Link>
           <button
             onClick={() => scrollTo("galeria")}
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
           >
             GALERÍA
           </button>
@@ -517,7 +525,7 @@ export default function Home() {
                   </div>
                 </Link>
                 <Link
-                  href=" www.facebook.com/dantebandmx"
+                  href="https://www.facebook.com/dantebandmx"
                   target="_blank"
                   className="flex justify-center items-center gap-2"
                 >
