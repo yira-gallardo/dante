@@ -99,6 +99,14 @@ const photos: Photo[] = [
     src: "/img/gallery-5.jpg",
     alt: "Photo 6",
   },
+  {
+    src: "/img/gallery-6.jpg",
+    alt: "Photo 8",
+  },
+  {
+    src: "/img/gallery-8.jpg",
+    alt: "Photo 6",
+  },
 ];
 
 // const tourDates = [
@@ -267,25 +275,25 @@ export default function Home() {
           </button>
         </div>
         <div
-          className={`absolute top-16 left-4 z-30 bg-white border border-black text-black${
+          className={`absolute top-16 left-4 z-30 bg-white border border-black text-white${
             isMobileMenuOpen ? "block" : "hidden"
           } md:hidden`}
         >
           <button
             onClick={() => scrollTo("tour")}
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
           >
             TOUR
           </button>
           <button
             onClick={() => scrollTo("musica")}
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
           >
             MÚSICA
           </button>
           <button
             onClick={() => scrollTo("merch")}
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
           >
             MERCH
           </button>
@@ -293,13 +301,13 @@ export default function Home() {
             href="https://www.youtube.com/channel/UCFCFBfGHOv8wItbjwQPktyA"
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
           >
             VIDEOS
           </Link>
           <button
             onClick={() => scrollTo("galeria")}
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
           >
             GALERÍA
           </button>
@@ -326,7 +334,7 @@ export default function Home() {
                 MERCH
               </button>
               <Link
-                href="https://www.youtube.com/channel/UCFCFBfGHOv8wItbjwQPktyA"
+                href="https://www.youtube.com/@dantebandmx"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border-2 border-transparent py-1 px-4 hover:border-red-700"
@@ -351,7 +359,11 @@ export default function Home() {
           </button>
         </div>
       </header>
-      <section id="tour" className="py-32">
+      <section
+        id="tour"
+        className="py-60 bg-cover bg-center"
+        style={{ backgroundImage: "url('/img/img-10.png')" }}
+      >
         <Animation
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -366,35 +378,16 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* <div className="max-w-4xl mx-auto">
-            {tourDates.map((tour, index) => (
-              <div
-                key={index}
-                className="grid grid-cols-3 items-center py-4 border-b border-gray-300"
-              >
-                <div className="text-center">
-                  <p>{tour.date}</p>
-                  <p>{tour.venue}</p>
-                </div>
-                <div className="text-center">
-                  <p>{tour.city}</p>
-                </div>
-                <div className="text-center">
-                  <a href={tour.link} target="_blank" rel="noopener noreferrer">
-                    <button className="bg-black text-white py-2 px-4">
-                      TICKETS
-                    </button>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div> */}
           <div className="container text-center mx-auto my-32">
             <h1 className="neonText text-2xl">Próximamente</h1>
           </div>
         </Animation>
       </section>
-      <section id="musica" className="py-60 bg-white">
+      <section
+        id="musica"
+        className="py-60 bg-cover bg-center"
+        style={{ backgroundImage: "url('/img/img-5.png')" }}
+      >
         <Animation
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -426,7 +419,11 @@ export default function Home() {
           </div>
         </Animation>
       </section>
-      <section id="merch" className=" py-60 bg-black">
+      <section
+        id="merch"
+        className="py-60 bg-cover bg-center"
+        style={{ backgroundImage: "url('/img/img-10.png')" }}
+      >
         <Animation
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -517,7 +514,7 @@ export default function Home() {
                   </div>
                 </Link>
                 <Link
-                  href=" www.facebook.com/dantebandmx"
+                  href="https://www.facebook.com/dantebandmx"
                   target="_blank"
                   className="flex justify-center items-center gap-2"
                 >
