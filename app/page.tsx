@@ -334,7 +334,7 @@ export default function Home() {
                 MERCH
               </button>
               <Link
-                href="https://www.youtube.com/channel/UCFCFBfGHOv8wItbjwQPktyA"
+                href="https://www.youtube.com/@dantebandmx"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border-2 border-transparent py-1 px-4 hover:border-red-700"
@@ -359,7 +359,11 @@ export default function Home() {
           </button>
         </div>
       </header>
-      <section id="tour" className="py-32">
+      <section
+        id="tour"
+        className="py-60 bg-cover bg-center"
+        style={{ backgroundImage: "url('/img/img-10.png')" }}
+      >
         <Animation
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -374,35 +378,16 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* <div className="max-w-4xl mx-auto">
-            {tourDates.map((tour, index) => (
-              <div
-                key={index}
-                className="grid grid-cols-3 items-center py-4 border-b border-gray-300"
-              >
-                <div className="text-center">
-                  <p>{tour.date}</p>
-                  <p>{tour.venue}</p>
-                </div>
-                <div className="text-center">
-                  <p>{tour.city}</p>
-                </div>
-                <div className="text-center">
-                  <a href={tour.link} target="_blank" rel="noopener noreferrer">
-                    <button className="bg-black text-white py-2 px-4">
-                      TICKETS
-                    </button>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div> */}
           <div className="container text-center mx-auto my-32">
             <h1 className="neonText text-2xl">Próximamente</h1>
           </div>
         </Animation>
       </section>
-      <section id="musica" className="py-60 bg-white">
+      <section
+        id="musica"
+        className="py-60 bg-cover bg-center"
+        style={{ backgroundImage: "url('/img/img-5.png')" }}
+      >
         <Animation
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -434,7 +419,11 @@ export default function Home() {
           </div>
         </Animation>
       </section>
-      <section id="merch" className=" py-60 bg-black">
+      <section
+        id="merch"
+        className="py-60 bg-cover bg-center"
+        style={{ backgroundImage: "url('/img/img-10.png')" }}
+      >
         <Animation
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
