@@ -281,19 +281,19 @@ export default function Home() {
         >
           <button
             onClick={() => scrollTo("tour")}
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
           >
             TOUR
           </button>
           <button
             onClick={() => scrollTo("musica")}
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
           >
             MÚSICA
           </button>
           <button
             onClick={() => scrollTo("merch")}
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
           >
             MERCH
           </button>
@@ -301,13 +301,13 @@ export default function Home() {
             href="https://www.youtube.com/channel/UCFCFBfGHOv8wItbjwQPktyA"
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
           >
             VIDEOS
           </Link>
           <button
             onClick={() => scrollTo("galeria")}
-            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-white"
+            className="block w-full border-b py-2 px-4 hover:bg-gray-200 text-black"
           >
             GALERÍA
           </button>
