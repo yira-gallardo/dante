@@ -421,42 +421,25 @@ export default function Home() {
       </section>
       <section
         id="merch"
-        className="py-60 bg-cover bg-center"
-        style={{ backgroundImage: "url('/img/img-10.png')" }}
+        className="relative w-screen h-screen overflow-hidden"
       >
-        <Animation
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
+        <Link
+          href="https://19cc6e-1c.myshopify.com/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <h2 className="text-6xl font-bold text-center mb-8 text-white">
-            MERCH
-          </h2>
-        </Animation>
-
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          {merchItems.map((item, index) => (
-            <div key={index} className="text-center">
-              <a href={item.link} target="_blank" rel="noopener noreferrer">
-                {" "}
-                <Animation
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                >
-                  <img
-                    src={item.image}
-                    alt={`Merch item ${index + 1}`}
-                    className="w-full h-auto mb-4 cursor-pointer"
-                  />
-                </Animation>
-              </a>
-            </div>
-          ))}
-        </div>
+          <video
+            autoPlay
+            loop
+            muted
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          >
+            <source src="/img/video.mp4" type="video/mp4" />
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </Link>
       </section>
+
       <section id="galeria" className="bg-white py-[128px] text-black">
         <Animation
           initial={{ opacity: 0, y: 20 }}
