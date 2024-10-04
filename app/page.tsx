@@ -363,33 +363,6 @@ export default function Home() {
       </header>
 
       <section
-        id="tour"
-        className="py-60 bg-cover bg-center"
-        style={{ backgroundImage: "url('/img/img-10.png')" }}
-      >
-        <Animation
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-6xl font-bold text-center mb-8 text-white">
-            TOUR
-          </h2>
-        </Animation>
-        <Animation
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="container text-center mx-auto my-32">
-            <h1 className="neonText">Próximamente</h1>
-          </div>
-        </Animation>
-      </section>
-
-      <section
         id="musica"
         className="py-60 bg-cover bg-center"
         style={{ backgroundImage: "url('/img/img-5.png')" }}
@@ -400,7 +373,7 @@ export default function Home() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-6xl font-bold text-center mb-8 text-black">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 md:mb-8 text-black">
             MÚSICA
           </h2>
         </Animation>
@@ -452,7 +425,9 @@ export default function Home() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-6xl font-bold text-center mb-8">GALERÍA</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 md:mb-8">
+            GALERÍA
+          </h2>
         </Animation>
         <Animation
           initial={{ opacity: 0, y: 20 }}
@@ -476,6 +451,33 @@ export default function Home() {
                 />
               </div>
             ))}
+          </div>
+        </Animation>
+      </section>
+
+      <section
+        id="tour"
+        className="py-60 bg-cover bg-center"
+        style={{ backgroundImage: "url('/img/img-10.png')" }}
+      >
+        <Animation
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-6xl font-bold text-center mb-8 text-white">
+            TOUR
+          </h2>
+        </Animation>
+        <Animation
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="container text-center mx-auto my-32">
+            <h1 className="neonText">Próximamente</h1>
           </div>
         </Animation>
       </section>
