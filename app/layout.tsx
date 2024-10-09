@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         url: "/img/banner.jpg",
         width: 800,
         height: 600,
-        alt: "ALLISON Band Image",
+        alt: "DANTE Band Image",
       },
     ],
   },

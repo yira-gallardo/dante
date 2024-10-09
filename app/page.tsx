@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+
 import { motion } from "framer-motion";
 import Animation from "./components/UI/Animation/Animation";
 
@@ -140,31 +141,6 @@ const photos: Photo[] = [
 //     city: "Monterrey",
 //     link: "https://www.superboletos.com/landing-evento/J-caPb_k87kBTk0ZV_nJSg",
 //   },
-//   {
-//     date: "Sep. 28",
-//     venue: "Cactus Festival",
-//     city: "Saltillo",
-//     link: "https://arema.mx/checkout/59489/areas",
-//   },
-//   {
-//     date: "Oct. 04",
-//     venue: "Auditorio Explanada",
-//     city: "Puebla",
-//     link: "https://boletos.blackticket.com.mx/tickets/es/entradas-musica-allison-acustico",
-//   },
-//   {
-//     date: "Oct. 19",
-//     venue: "Tecate Península",
-//     city: "Tijuana",
-//     link: "https://tecatepeninsula.com/boletos",
-//   },
-//   {
-//     date: "Nov. 09",
-//     venue: "Cachanilla Fest",
-//     city: "Mexicali",
-//     link: "https://janto4.mx/gpproducer/public/janto/main.php?Nivel=Evento&idEvento=CACHANILLAMEXI&fbclid=IwY2xjawD76opleHRuA2FlbQIxMAABHfZ6jaQXDZvqqMVj8ysoDJYLrO_hI9FOpvXZGqg6RW8URJzrFcAriTmw8w_aem_R2LO7W0iPXC3-YQvNRXIJg",
-//   },
-//
 // ];
 
 const merchItems = [
@@ -185,6 +161,7 @@ const merchItems = [
 export default function Home() {
   const [enlargedPhoto, setEnlargedPhoto] = useState<Photo | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
 
@@ -229,11 +206,29 @@ export default function Home() {
   };
 
   const toggleMobileMenu = () => {
-    console.log("Toggling mobile menu"); // Para depuración
     setIsMobileMenuOpen((prev) => !prev);
   };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <main className="">
+    <main>
       <header className="relative md:min-h-[100vh]">
         <link rel="icon" href="/favicon.ico" />
         <div className="absolute inset-0 z-0">
@@ -251,7 +246,7 @@ export default function Home() {
         <div className="block md:hidden">
           <Image
             src="/img/banda-mobile.jpg"
-            alt="Allison"
+            alt="dante"
             width={1300}
             height={1920}
           />
@@ -275,17 +270,12 @@ export default function Home() {
           </button>
         </div>
         <div
+          ref={menuRef}
           className={`absolute top-16 left-4 z-30 bg-white border border-black text-black ${
             isMobileMenuOpen ? "block" : "hidden"
           } md:hidden`}
         >
           <div className="flex flex-col">
-            <button
-              onClick={() => scrollTo("tour")}
-              className="w-full border-b py-2 px-4 hover:bg-gray-200 text-center text-black"
-            >
-              TOUR
-            </button>
             <button
               onClick={() => scrollTo("musica")}
               className="w-full border-b py-2 px-4 hover:bg-gray-200 text-center text-black"
@@ -312,17 +302,17 @@ export default function Home() {
             >
               GALERÍA
             </button>
+            <button
+              onClick={() => scrollTo("tour")}
+              className="w-full border-b py-2 px-4 hover:bg-gray-200 text-center text-black"
+            >
+              TOUR
+            </button>
           </div>
         </div>
         <div className="hidden md:flex absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
           <div className="flex justify-between items-center w-full px-4 py-2">
             <div className="md:flex justify-center space-x-16 mt-4 text-3xl font-bold">
-              <button
-                onClick={() => scrollTo("tour")}
-                className="border-2 border-transparent py-1 px-4 hover:border-red-700"
-              >
-                TOUR
-              </button>
               <button
                 onClick={() => scrollTo("musica")}
                 className="border-2 border-transparent py-1 px-4 hover:border-red-700"
@@ -349,6 +339,12 @@ export default function Home() {
               >
                 GALERÍA
               </button>
+              <button
+                onClick={() => scrollTo("tour")}
+                className="border-2 border-transparent py-1 px-4 hover:border-red-700"
+              >
+                TOUR
+              </button>
             </div>
           </div>
         </div>
@@ -373,9 +369,12 @@ export default function Home() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 md:mb-8 text-black">
+          <Link
+            href="/"
+            className="text-4xl md:text-6xl font-bold text-center mb-4 md:mb-8 text-black block"
+          >
             MÚSICA
-          </h2>
+          </Link>
         </Animation>
         <Animation
           initial={{ opacity: 0, x: 100 }}
@@ -425,9 +424,12 @@ export default function Home() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 md:mb-8">
+          <Link
+            href="/"
+            className="text-4xl md:text-6xl font-bold text-center mb-4 md:mb-8 block"
+          >
             GALERÍA
-          </h2>
+          </Link>
         </Animation>
         <Animation
           initial={{ opacity: 0, y: 20 }}
@@ -466,9 +468,12 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-6xl font-bold text-center mb-8 text-white">
+          <Link
+            href="/"
+            className="text-4xl md:text-6xl font-bold text-center mb-8 text-white block"
+          >
             TOUR
-          </h2>
+          </Link>
         </Animation>
         <Animation
           initial={{ opacity: 0, x: 100 }}
