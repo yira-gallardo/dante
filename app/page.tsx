@@ -228,7 +228,7 @@ export default function Home() {
   }, [isMobileMenuOpen]);
 
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <header className="relative md:min-h-[100vh]">
         <link rel="icon" href="/favicon.ico" />
         <div className="absolute inset-0 z-0">
@@ -357,7 +357,6 @@ export default function Home() {
           </button>
         </div>
       </header>
-
       <section
         id="musica"
         className="py-60 bg-cover bg-center"
@@ -456,7 +455,6 @@ export default function Home() {
           </div>
         </Animation>
       </section>
-
       <section
         id="tour"
         className="py-60 bg-cover bg-center"
