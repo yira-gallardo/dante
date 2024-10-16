@@ -409,13 +409,19 @@ export default function Home() {
             autoPlay
             loop
             muted
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            className="absolute top-0 left-0 w-full h-full object-cover hidden md:block"
           >
             <source src="/img/video.mp4" type="video/mp4" />
             Tu navegador no soporta el elemento de video.
           </video>
+          <img
+            src="/img/img-6.png" // Cambia esto por la ruta de tu imagen
+            alt="Descripción de la imagen"
+            className="absolute top-0 left-0 w-full h-full object-cover md:hidden"
+          />
         </Link>
       </section>
+
       <section id="galeria" className="bg-black pt-24 pb-12 text-white">
         <Animation
           initial={{ opacity: 0, y: 20 }}
