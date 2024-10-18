@@ -408,15 +408,9 @@ export default function Home() {
           <img
             src="/img/gif-mobile.gif"
             alt="video, tipo de merch Dante"
-            className="absolute top-0 left-0 w-full h-full object-cover md:hidden"
+            className="absolute top-0 left-0 w-full h-full object-cover"
           />
         </Link>
-        <Image
-          src="/img/video-desk.gif"
-          alt="merch"
-          width={1920}
-          height={1080}
-        />
       </section>
 
       <section id="galeria" className="bg-black pt-24 pb-12 text-white">
