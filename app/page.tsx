@@ -406,7 +406,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <img
-            src="/img/video-mobile.gif"
+            src="/img/gif-mobile.gif"
             alt="video, tipo de merch Dante"
             className="absolute top-0 left-0 w-full h-full object-cover md:hidden"
           />
